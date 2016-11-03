@@ -9,7 +9,6 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>/opt/logs/cupid.log</File>
-        <Encoding>UTF-8</Encoding>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
             <FileNamePattern>/opt/logs/cupid.%d{yyyy-MM-dd}.log</FileNamePattern>

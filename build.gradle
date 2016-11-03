@@ -47,3 +47,7 @@ dependencies {
 ////        applicationClass 'com.dejionline.cargador.Cargador'
 ////    }
 //}
+
+task fatJar(type: FatCapsule) {
+    applicationClass 'com.chaos.cupid.Cupid'
+}

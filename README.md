@@ -22,6 +22,11 @@ Cupid
         
     
     GET /pull/{uniqueId}
+    
+* Client
+
+    JAVA: [Psyche](https://github.com/zcfrank1st/psyche)
+    
 
 
     

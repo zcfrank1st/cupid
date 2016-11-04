@@ -3,7 +3,7 @@ package com.chaos.cupid.actors
 import akka.actor.{Actor, ActorRef}
 import scala.concurrent.duration._
 import com.chaos.cupid.components.{ConfigModule, RedisModule}
-import com.chaos.cupid.entities.{ActionResponse, Heartbeat, Push, PushInfo}
+import com.chaos.cupid.entities.{ActionResponse, Push, PushInfo}
 
 /**
   * Created by zcfrank1st on 03/11/2016.

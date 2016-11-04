@@ -25,7 +25,13 @@ Cupid
     
 * Client
 
-    JAVA: [Psyche](https://github.com/zcfrank1st/psyche)
+    java: [psyche](https://github.com/zcfrank1st/psyche)
+    
+   
+* License
+
+    MIT
+
     
 
 

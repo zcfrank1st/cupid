@@ -29,10 +29,6 @@ class HandlerActor(udpActor: ActorRef) extends Actor with RedisModule with Confi
       }
       sender ! ActionResponse(0, "ok")
 
-    case Heartbeat(id, ipPortString) =>
-      heartbeat(id, ipPortString)
-      sender ! ActionResponse(0, "ok")
-
     case id: String =>
       val onlineInfo = getOnlineInfo(id)
       if (!onlineInfo.forall(_.isEmpty)) {

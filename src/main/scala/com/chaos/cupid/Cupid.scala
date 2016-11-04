@@ -52,28 +52,6 @@ object Cupid extends App with JsonModule with ConfigModule {
       }
   }
 
-  object HeartbeatPath {
-    val route =
-      path("heartbeat") {
-        post {
-          entity(as[Heartbeat]) { heartbeat =>
-            try {
-              complete {
-                val future = handlerActor ? heartbeat
-                Await.result(future, timeout.duration).asInstanceOf[ActionResponse]
-              }
-            } catch {
-              case e: Throwable =>
-                logger.error(s"error request ${e.getMessage}")
-                complete {
-                  ActionResponse(1, "failed")
-                }
-            }
-          }
-        }
-      }
-  }
-
   object PullPath {
     val route =
       path("pull"/ Segment) { id =>
@@ -95,7 +73,7 @@ object Cupid extends App with JsonModule with ConfigModule {
   }
 
   val httpPort = config.getInt("cupid.http.port")
-  val bindingFuture = Http().bindAndHandle(PushPath.route ~ HeartbeatPath.route ~ PullPath.route, "0.0.0.0", httpPort)
+  val bindingFuture = Http().bindAndHandle(PushPath.route ~ PullPath.route, "0.0.0.0", httpPort)
   logger.info(s"Server is running on port $httpPort ... Press RETURN to stop...")
   StdIn.readLine()
   bindingFuture

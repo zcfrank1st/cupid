@@ -1,12 +1,13 @@
-plugins {
-    id "us.kirchmeier.capsule" version "1.0.2"
-}
+//plugins {
+//    id "us.kirchmeier.capsule" version "1.0.2"
+//}
 
 //subprojects {
 group 'com.chaos'
 version '1.0-SNAPSHOT'
 
 apply plugin: "scala"
+apply plugin: "application"
 
 repositories {
     mavenCentral()
@@ -28,6 +29,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
+mainClassName = "com.chaos.cupid.Cupid"
+
 //}
 
 //project(':api') {
@@ -48,6 +51,6 @@ dependencies {
 ////    }
 //}
 
-task fatJar(type: FatCapsule) {
-    applicationClass 'com.chaos.cupid.Cupid'
-}
+//task fatJar(type: FatCapsule) {
+//    applicationClass 'com.chaos.cupid.Cupid'
+//}

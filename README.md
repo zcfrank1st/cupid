@@ -1,10 +1,11 @@
 Cupid
 ===
+![cupid](logo/cupid.png)
 > Cupid is funny !
 
 * Description
 
-    This is a standalone backend of a push system which is using udp protocal to send push content and using http protocal to communicate with clients.
+    This is a standalone backend of a push system which is using udp protocal to communicate with clients and using http protocal to manage push contents.
     
 * Usage
     * Use udp client (java version, ios version whatever) to connect and register heartbeat every ? seconds.
